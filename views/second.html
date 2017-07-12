@@ -1,0 +1,34 @@
+<div class = "container" ng-controller = "myCtrl">
+   
+    <input type = "button" ng-click = "previous()" value = "back" class="btn btn-primary">
+    
+    <table class="table table-striped table-bordered">
+        <tbody>
+            <tr>
+                <th>Task name</th>
+                <th>Actual effort</th>
+                <th>Estimated effort</th>
+                <th>Description</th>
+            </tr>
+
+            <tr ng-show = "x" ng-click = 'x=false'>
+                <td>{{selected.name}}</td>                
+                <td>{{selected.actual_effort}}</td>
+                <td>{{selected.estimated_effort}}</td>
+                <td>{{selected.description}}</td>
+            </tr>
+            
+            <tr ng-hide = "x">
+                <td><input type = "text" ng-model = "selected.name"></td>                
+                <td><input type = "text" ng-model = "selected.actual_effort"></td>
+                <td><input type = "text" ng-model = "selected.estimated_effort"></td>
+                <td>
+                    <input type = "text" ng-model = "selected.description">
+                    <input type = "button" value = "Ok" ng-click = "ok()">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    
+    
+</div> 
